@@ -19,12 +19,11 @@ RSpec.describe AlbumRepository do
     albums = repo.all # return result
     
     
-    expect(albums.length).to eq(2) # => 2
+    expect(albums.length).to eq 2 # => 2
 
-    expect(albums.first.title).to eq('Bossanova') # => 'Bossanova'
-    expect(albums.first.release_year).to eq('1999') # => '1999'
-    expect(albums.first.artist_id).to eq('1') # => '1'
+    expect(albums.first.artist_id).to eq '1' 
+    expect(albums.first.title).to eq 'Bossanova' 
+    expect(albums.first.release_year).to eq '1999'
+    
   end
 end
-
-
