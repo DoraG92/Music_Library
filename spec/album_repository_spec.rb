@@ -12,18 +12,31 @@ RSpec.describe AlbumRepository do
     reset_albums_table
   end
   
-    # (your tests will go here).
-  
   it 'returns two albums' do 
     repo = AlbumRepository.new
     albums = repo.all # return result
     
-    
     expect(albums.length).to eq 2 # => 2
-
     expect(albums.first.artist_id).to eq '1' 
     expect(albums.first.title).to eq 'Bossanova' 
-    expect(albums.first.release_year).to eq '1999'
-    
+    expect(albums.first.release_year).to eq '1999' 
+  end
+
+  it 'returns Bossanova as an album' do
+    repo = AlbumRepository.new
+    albums = repo.find(1)
+
+    expect(albums.title).to eq 'Bossanova' 
+    expect(albums.release_year).to eq '1999'
+    expect(albums.artist_id).to eq '1' 
+  end
+
+  it 'returns Surfer Rosa as an album' do
+    repo = AlbumRepository.new
+    albums = repo.find(2)
+
+    expect(albums.title).to eq 'Surfer Rosa' 
+    expect(albums.release_year).to eq '2001'
+    expect(albums.artist_id).to eq '1' 
   end
 end

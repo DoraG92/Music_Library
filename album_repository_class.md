@@ -114,6 +114,14 @@ class AlbumsRepository
 
     # Returns an array of Album objects.
   end
+
+  # Select a single album record
+  # Given its id in argument (a number)
+  def find(id)
+  # Executes the SQL query:
+  # SELECT id, title, release_year, artist_id FROM albums WHERE id = $1;
+
+   # Returns a single Album object.
 end
 ```
 
@@ -135,6 +143,16 @@ albums.length # => 2
 albums.first.title # => 'Bossanova'
 albums.first.release_year # => '1999'
 albums.first.artist_id # => '1'
+
+# 2
+# Gets a single album
+
+repo = AlbumRepository.new
+albums = repo.find(1)
+albums.first_title # => 'Bossanova'
+albums.first.release_year # => '1999'
+albums.first.artist_id # => '1'
+
 ```
 
 Encode this example as a test.

@@ -15,5 +15,12 @@ album_repository = AlbumRepository.new
 #   p album
 # end
 
-artist = artist_repository.find(4)
-puts artist.name
+# artist = artist_repository.find(4)
+# puts artist.name
+
+### Get Album with id 3
+
+album = album_repository.find(3)
+ puts album.id
+ puts album.title
+ puts album.release_year
